@@ -1,0 +1,360 @@
+/*******************************************************************************
+ *
+ * $RESETS
+ *
+ ******************************************************************************/
+
+ *
+ {
+   cursor: inherit;
+   box-sizing: border-box;
+ }
+
+ input, select, textarea, a[href]
+ {
+   cursor: auto;
+ }
+
+ html, input, select, textarea, button, legend
+ {
+   font: 12px "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+   /* font: 12px "Helvetica Neue", Arial, sans-serif; */
+   color: inherit;
+   }
+
+ html, body
+ {
+   border: 0;
+   padding: 0;
+   margin: 0;
+   cursor: default;
+ }
+
+ html
+ {
+   line-height: 1em;
+   overflow: hidden;
+ }
+
+ body
+ {
+   /* (i) If background color was set for HTML the background color for BODY
+    * would not take effect. Not sure why this is. (Tested only in IE10.)
+
+   color: WindowText;*/
+   color: #000;
+   background: Window;
+ }
+ body.platform-windows
+ {
+   background: ThreeDFace;
+ }
+
+ /* Windows 8.1 (Or IE11?), or setting text scaling will cause text to appear
+  * too big under Windows. Setting explicit size in points appear to make things
+  * better.
+  */
+ .platform-windows,
+ .platform-windows input,
+ .platform-windows select,
+ .platform-windows textarea,
+ .platform-windows button,
+ .platform-windows legend
+ {
+   font-size: 9pt;
+ }
+
+
+ /*******************************************************************************
+  *
+  * $GENERIC
+  *
+  ******************************************************************************/
+
+
+ .warning
+ {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   z-index: 10000;
+   padding: 0.5em;
+   color: #000;
+   background: #fec;
+   border-bottom: 1px solid #dca;
+ }
+
+
+ /*******************************************************************************
+  *
+  * $CONTROL
+  *
+  ******************************************************************************/
+
+
+ .control
+ {
+   position: absolute;
+ }
+
+
+ /*******************************************************************************
+  *
+  * $CONTAINER
+  *
+  ******************************************************************************/
+
+
+ .container
+ {
+   overflow: hidden;
+ }
+
+ .container .control-container
+ {
+   border: 0px solid #aaa;
+ }
+
+ .control-container .container-selected
+ {
+   border-top: 1px solid #aaa;
+   border-bottom: 1px solid #aaa;
+ }
+
+ .control-container .attribute-list
+ {
+   border: 0px;
+   overflow-y: auto;
+ }
+
+ .control-container .top-border
+ {
+   border-top: 1px solid #aaa;
+   overflow-y: auto;
+ }
+
+ /*******************************************************************************
+  *
+  * $CHECKBOX
+  *
+  ******************************************************************************/
+
+ .control-checkbox
+ {
+   line-height: 1em;
+ }
+
+ .control-checkbox input
+ {
+   cursor:pointer;
+   padding: 0;
+   margin: 0 0.5em 0;
+   vertical-align: bottom;
+ }
+
+
+ /*******************************************************************************
+  *
+  * $GROUPBOX
+  *
+  ******************************************************************************/
+
+
+ .control-groupbox
+ {
+   /* Patching up due to IE11 displaying 10-15px height difference from IE10 or
+    * WebKit. This appear to bring the appearance on-par.
+    */
+   box-sizing: content-box;
+ }
+
+ .platform-osx .control-groupbox
+ {
+   box-sizing: auto;
+   border-width: 1px;
+ }
+
+
+ /*******************************************************************************
+  *
+  * $LABEL
+  *
+  ******************************************************************************/
+
+
+ .control-label a
+ {
+   display: inline-block;
+   width: 100%;
+   height: 100%;
+ }
+
+
+ /*******************************************************************************
+  *
+  * $LISTBOX
+  *
+  ******************************************************************************/
+
+
+ .control-listbox select
+ {
+   width: 100%;
+   height: 100%;
+ }
+
+
+ /*******************************************************************************
+  *
+  * $LISTBOXIMAGE
+  *
+  ******************************************************************************/
+
+
+ .control-listboximage select
+ {
+   width: 100%;
+   height: 100%;
+ }
+
+ .control-listboximage img
+ {
+   border:1px solid #999;
+ }
+
+ .img-material
+ {
+   position: relative;
+   height: 18px;
+   width: 40px;
+   left: -6px;
+   top: 2px;
+ }
+
+ .img-material:hover
+ {
+   position: relative;
+   z-index: 1100;
+   width: 96px;
+   height: 96px;
+ }
+
+
+
+
+
+
+
+
+ .img-thumb
+ {
+   position: relative;
+   height: 18px;
+   width: 40px;
+   left: -6px;
+   top: 2px;
+ }
+
+ .img-thumb:hover
+ {
+   position: relative;
+   z-index: 1100;
+   width: 96px;
+   height: 96px;
+ }
+
+
+ /*******************************************************************************
+  *
+  * $TAGSBOX
+  *
+  ******************************************************************************/
+
+
+ .control-tagsbox select
+ {
+   width: 100%;
+   height: 100%;
+ }
+
+ /*******************************************************************************
+  *
+  * $BUTTON
+  *
+  ******************************************************************************/
+
+ .control-button
+ {
+   cursor:pointer;
+   padding-left:3px;
+   padding-top:0;
+   border: 0px;
+ }
+
+ .control-button:hover
+ {
+   background: #0078d7;
+   color: white;
+ }
+
+ /*******************************************************************************
+  *
+  * $IMAGE
+  *
+  ******************************************************************************/
+
+ .image-border
+ {
+   border: 1px solid #ccc;
+ }
+
+ /*******************************************************************************
+  *
+  * $RADIOBUTTON
+  *
+  ******************************************************************************/
+
+ .control-radiobutton
+ {
+   line-height: 1em;
+ }
+
+ .control-radiobutton input
+ {
+   padding: 0;
+   margin: 0 0.3em 0 0;
+   vertical-align: bottom;
+ }
+
+
+ /*******************************************************************************
+  *
+  * $TEXTBOX
+  *
+  ******************************************************************************/
+
+ .control-textbox input,
+ .control-textbox textarea
+ {
+   box-sizing: border-box;
+   display: block;
+   padding-left: 8px;
+   padding-right: 20px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   position: relative;
+   background-color: white;
+   border: 1px solid #aaa;
+   border-radius: 0px;
+   height: 24px;
+   width: 100%;
+   font:inherit;
+ }
+
+
+ .attribute-list
+ {
+   border: 0px;
+ }
